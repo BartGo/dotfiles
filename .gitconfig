@@ -1,12 +1,8 @@
 [user]
-	name = BartGo
-	email = bartoszgo@gmail.com
+	name = MY_NAME
+	email = MY_EMAIL
 [core]
-	excludesfile = C:\\Users\\bartek\\Documents\\gitignore_global.txt
-[difftool "kdiff3"]
-	cmd = 'C:/Program Files (x86)/WinMerge/WinMergeU.exe' \"$LOCAL\" \"$REMOTE\"
-[gui]
-	recentrepo = X:/bottle-stack.git
+	excludesfile = C:\\Users\\MY_LOGIN\\Documents\\gitignore_global.txt
 [push]
 	default = simple
 [alias]
