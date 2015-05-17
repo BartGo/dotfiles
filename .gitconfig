@@ -1,0 +1,14 @@
+[user]
+	name = BartGo
+	email = bartoszgo@gmail.com
+[core]
+	excludesfile = C:\\Users\\bartek\\Documents\\gitignore_global.txt
+[difftool "kdiff3"]
+	cmd = 'C:/Program Files (x86)/WinMerge/WinMergeU.exe' \"$LOCAL\" \"$REMOTE\"
+[gui]
+	recentrepo = X:/bottle-stack.git
+[push]
+	default = simple
+[alias]
+        st = status
+        com = commit
