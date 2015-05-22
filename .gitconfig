@@ -1,6 +1,9 @@
 [user]
 	name = MY_NAME
 	email = MY_EMAIL
+
+[http]
+	proxy = http://MY_PROXY:MY_PORT
 	
 [core]
 	excludesfile = C:\\Users\\MY_LOGIN\\Documents\\gitignore_global.txt
@@ -9,6 +12,9 @@
 	default = simple
 	
 [alias]
+	
+	# see https://github.com/dotphiles/dotphiles/blob/master/git/gitconfig
+	
 	s = status
     cm = commit --message
     l   = log --topo-order --pretty=format:'%C(yellow)%h %C(cyan)%cn %C(blue)%cr%C(reset) %s'
@@ -19,5 +25,12 @@
     lm  = log --topo-order --pretty=format:'%s'
     lh  = shortlog --summary --numbered
     llf = fsck --lost-found
-	# see https://github.com/dotphiles/dotphiles/blob/master/git/gitconfig
-    
+	
+	# others
+	
+	sai0 = stash apply --index stash@{0}
+	sai1 = stash apply --index stash@{1}
+	sai2 = stash apply --index stash@{2}
+	sai3 = stash apply --index stash@{3}
+	sai4 = stash apply --index stash@{4}
+	sai5 = stash apply --index stash@{5}
