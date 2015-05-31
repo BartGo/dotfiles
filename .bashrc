@@ -1,7 +1,10 @@
-cd /x/
-echo.
-bash --version
-echo.
+#cd /x/
+#echo.
+#bash --version
+#echo.
+
+
+export EDITOR=joe
 
 function virtualenv_prompt() {
     if [ -n "$VIRTUAL_ENV" ]; then
