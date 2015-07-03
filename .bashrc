@@ -1,5 +1,3 @@
-cd /x/
-
 function virtualenv_prompt() {
     if [ -n "$VIRTUAL_ENV" ]; then
         echo "(in venv ${VIRTUAL_ENV##/*/})"
