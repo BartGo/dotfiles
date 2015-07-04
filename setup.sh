@@ -1,7 +1,7 @@
 #cd $HOME
-#apt-get install -y git-core
+#sudo apt-get install -y git-core
 #git clone https://github.com/bartgo/dotfiles
-#./dotfiles/setup.sh   
+#sudo bash ./dotfiles/setup.sh   
 
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
@@ -11,21 +11,20 @@ ln -sb dotfiles/mercurial.ini .
 cp -r dotfiles/vimfiles/* ~/.vim/
 
 apt-get update
-alias apti=apt-get install
-apti nano
-apti pico
-apti joe
-apti jed
-apti -y vim
-apti -y git-core
-apti tig
-apti mc
-apti tmux
-apti python
-apti fortune
-apti cowsay
+apt-get install nano
+apt-get install pico
+apt-get install joe
+apt-get install jed
+apt-get install -y vim
+apt-get install -y git-core
+apt-get install tig
+apt-get install mc
+apt-get install tmux
+apt-get install python
+apt-get install fortune
+apt-get install cowsay
 
-pip install --upgrade wheel pipdeptree virtualenv pew vex \
-joe request mercurial splinter WebTest
+pip install --user --upgrade wheel pipdeptree virtualenv pew vex
+pip install --user --upgrade joe mercurial
 
 
