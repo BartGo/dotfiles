@@ -20,6 +20,7 @@ apt-get update
 apt-get install -y nano
 apt-get install -y jed
 apt-get install -y vim
+apt-get install -y ruby-full
 apt-get install -y git-core
 apt-get install -y tig
 apt-get install -y mc
@@ -27,12 +28,17 @@ apt-get install -y tmux
 apt-get install -y htop
 apt-get install -y python
 apt-get install -y python-dev
-apt-get install -y python-setuptools
+apt-get install -y python-setuptools python-software-properties
+apt-get install -y build-essential
 apt-get install -y python-pip
 apt-get install -y fortune
-apt-get install -y cowsay
+apt-get install -y rubygems ruby1.9.3 ruby1.9.3-dev ruby2.1 ruby2.1-dev ruby-switch
+# ruby-switch --set ruby2.1
+apt-get install -y rhc
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-pip install --user --upgrade wheel pipdeptree virtualenv pew vex
-pip install --user --upgrade joe mercurial
+pip install --user --upgrade pip wheel virtualenv pew vex tox
+pip install --user --upgrade joe mercurial bumpversion pipdeptree yolk
 
+gem install travis -v 1.7.7 --no-rdoc --no-ri
 
