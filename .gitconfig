@@ -27,6 +27,7 @@
     
     # others
     
+	kdiff= difftool --tool=kdiff3
     a    = add --all .
     d    = difftool --tool=kdiff3
     l    = log --decorate --graph --all --pretty=format:'%Cgreen%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold green)%an%Creset' 
