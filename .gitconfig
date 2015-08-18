@@ -8,15 +8,43 @@
 ;[core]
 ;    excludesfile = C:\\Users\\MY_LOGIN\\Documents\\gitignore_global.txt
 
+[color]
+	ui = auto
+	
+[color "branch"]
+	current = red
+	local = yellow
+	remote = green
+	
+[color "diff"]
+	meta = cyan
+	frag = magenta
+	old = red bold
+	new = green bold
+	
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+	
 [push]
     default = simple
     
 [alias]
     
-    # see https://github.com/dotphiles/dotphiles/blob/master/git/gitconfig
+    # https://github.com/dotphiles/dotphiles/blob/master/git/gitconfig
+	# https://github.com/mitsuhiko/dotfiles/blob/master/git/gitconfig
     
-	s = status
+	s = status -sb
+	ci = commit
     cm = commit --message
+	co = checkout
+	br = branch
+	cp = cherry-pick
+	cps = cherry-pick -s
+	today = diff @{yesterday}.. --stat
+	meh = commit --amend
+
     ls  = log --decorate --topo-order --stat --pretty=format:'%C(bold)%C(yellow)Commit:%C(reset) %C(yellow)%H%C(red)%d%n%C(bold)%C(yellow)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)%C(yellow)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
     ld  = log --decorate --topo-order --stat --patch --full-diff --pretty=format:'%C(bold)%C(yellow)Commit:%C(reset) %C(yellow)%H%C(red)%d%n%C(bold)%C(yellow)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)%C(yellow)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
     lg  = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -24,7 +52,11 @@
     lm  = log --decorate --topo-order --pretty=format:'%s'
     lh  = shortlog --summary --numbered
     llf = fsck --lost-found
-    
+
+	wtf = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d%C(auto,reset)\\ by\\ %C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)%n\\ %s%n" --stat
+	in = !git wtf HEAD..HEAD@{u}
+	out = !git wtf HEAD@{u}..HEAD
+	
     # others
     
     p = push --progress
