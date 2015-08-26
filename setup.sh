@@ -37,7 +37,7 @@ apt-get install -y rubygems ruby1.9.3 ruby1.9.3-dev ruby2.1 ruby2.1-dev ruby-swi
 apt-get install -y rhc
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-pip install --user --upgrade pudb ipython
+pip install --user --upgrade pudb ipython ptpython
 pip install --user --upgrade pip wheel virtualenv pew vex tox
 pip install --user --upgrade joe mercurial bumpversion pipdeptree yolk
 
