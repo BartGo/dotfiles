@@ -1,0 +1,26 @@
+
+# HTTP_PROXY=http://user:pass@host:port
+# export HTTP_PROXY
+# docker-machine rm default
+# docker-machine create --driver virtualbox default
+# docker-machine ls
+# eval "$(docker-machine env default)"
+# -- 
+# https://docs.docker.com/machine/drivers/virtualbox/ -- VirtualBox 4.3.28 recommended? crashing with 5.x
+# docker-machine ip default
+# docker-machine stop default
+# docker-machine start default
+# docker info
+# https://github.com/boot2docker/boot2docker/issues/392#issuecomment-61999567
+# nat, paravirtualized network, cable connected, port 2373 forwarded, vm restarted)
+# export DOCKER_HOST=tcp://127.0.0.1:2376
+# export DOCKER_TLS_VERIFY="0"
+# export DOCKER_TLS=no
+# docker-machine rm default
+# docker-machine create --driver virtualbox default
+# --
+# docker images
+# docker run default
+# docker run hello
+# docker pull    tatsushid/tinycore:6.3-x86
+# docker run -it tatsushid/tinycore:6.3-x86
