@@ -9,3 +9,5 @@ hostname
 date
 env | grep PATH
 echo ""
+cd ~
+pwd
