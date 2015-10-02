@@ -7,7 +7,7 @@ alias pw="pew in ${PWD##*/}"
 # export PATH='~/.local/bin:$PATH'
 hostname
 date
-env | grep PATH
+# env | grep PATH
 echo ""
 cd ~
 pwd

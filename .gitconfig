@@ -73,9 +73,9 @@
     # others
     p = push --progress
     cx = commit --message "..."
-    kdiff= difftool --tool=kdiff3
+    kdiff= difftool --tool=kdiff3 --dir-diff
     a    = add --all .
-    d    = difftool --tool=kdiff3
+    d    = difftool --tool=kdiff3 --dir-diff
     l    = log --decorate --graph --all --pretty=format:'%Cgreen%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold green)%an%Creset' 
     sai0 = stash apply --index stash@{0}
     sai1 = stash apply --index stash@{1}
