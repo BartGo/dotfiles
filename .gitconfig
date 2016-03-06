@@ -52,11 +52,13 @@
     # https://github.com/dotphiles/dotphiles/blob/master/git/gitconfig
     # https://github.com/mitsuhiko/dotfiles/blob/master/git/gitconfig
     s = status -sb
-    ci = commit
-    cm = commit --message
-    co = checkout
-    br = branch
-    cp = cherry-pick
+    rso = remote show origin
+    rpo = remote prune origin
+    ci  = commit
+    cm  = commit --message
+    co  = checkout
+    br  = branch
+    cp  = cherry-pick
     cps = cherry-pick -s
     today = diff @{yesterday}.. --stat
     meh = commit --amend
