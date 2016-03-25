@@ -16,6 +16,9 @@
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
 
+cd ~
+git clone https://github.com/nanorc/nanorc.git
+
 apt-get update
 apt-get install -y nano
 apt-get install -y jed

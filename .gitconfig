@@ -7,9 +7,11 @@
 
 ;[http]
 ;   proxy = http://MY_PROXY:MY_PORT
-    
-[core]
-    editor = joe
+;	proxy = http://USER:PASS@squid.cegedim.fr:3128
+	sslVerify = false
+
+;[core]
+;    editor = joe
 ;   excludesfile = C:\\Users\\MY_LOGIN\\Documents\\gitignore_global.txt
 
 ;[difftool "kdiff3"]
@@ -44,6 +46,8 @@
 
 [gui]
 	recentrepo = X:/bottle-stack.git
+	warndetachedcommit = true
+	encoding = utf-8
 
 [push]
     default = simple
@@ -86,3 +90,7 @@
     sai3 = stash apply --index stash@{3}
     sai4 = stash apply --index stash@{4}
     sai5 = stash apply --index stash@{5}
+
+[url "https://"]
+	insteadOf = git://
+
