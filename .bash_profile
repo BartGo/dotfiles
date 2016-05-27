@@ -1,15 +1,20 @@
 alias ll="ls -al"
 alias la="ls -al"
 alias dir="ls -al"
-#alias edit="jstar"
 alias hh="history"
-alias npp='/c/"Program Files (x86)"/Notepad++/notepad++.exe'
 alias hi='echo Hello!'
-# alias pw="pew in ${PWD##*/}"
+
+# alias npp='/c/"Program Files (x86)"/Notepad++/notepad++.exe'
 # export PATH='~/.local/bin:$PATH'
+# env | grep PATH
+
+# "pew in here"
+alias ph='pew in $( echo ${PWD##*/} | sed "s/[^a-z]*//g" ) '
+
+# "pew in here freeze"
+alias pf='ph pip freeze'
+
 hostname
 date
-# env | grep PATH
 echo ""
-cd ~
-pwd
+cd /x
