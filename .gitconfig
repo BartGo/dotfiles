@@ -13,11 +13,11 @@
 ;    editor = joe
 ;   excludesfile = C:\\Users\\MY_LOGIN\\Documents\\gitignore_global.txt
 
-[url "git://github.com/BartGo/"]
-        insteadOf = bg:
+;[url "git://github.com/BartGo/"]
+;        insteadOf = bg:
 
-[url "https://"]
-	insteadOf = git://
+;[url "https://"]
+;	insteadOf = git://
 
 ;[difftool "kdiff3"]
 ;	cmd = 'C:/Program Files (x86)/WinMerge/WinMergeU.exe' \"$LOCAL\" \"$REMOTE\"
