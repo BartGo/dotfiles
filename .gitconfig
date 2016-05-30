@@ -6,13 +6,18 @@
 	helper = wincred
 
 ;[http]
-;   proxy = http://MY_PROXY:MY_PORT
-;	proxy = http://USER:PASS@squid.cegedim.fr:3128
+;   proxy = http://USER:PASS@MY_PROXY:MY_PORT
 	sslVerify = false
 
 ;[core]
 ;    editor = joe
 ;   excludesfile = C:\\Users\\MY_LOGIN\\Documents\\gitignore_global.txt
+
+[url "git://github.com/BartGo/"]
+        insteadOf = bg:
+
+[url "https://"]
+	insteadOf = git://
 
 ;[difftool "kdiff3"]
 ;	cmd = 'C:/Program Files (x86)/WinMerge/WinMergeU.exe' \"$LOCAL\" \"$REMOTE\"
@@ -45,7 +50,6 @@
 	required = true
 
 [gui]
-	recentrepo = X:/bottle-stack.git
 	warndetachedcommit = true
 	encoding = utf-8
 
@@ -91,6 +95,4 @@
     sai4 = stash apply --index stash@{4}
     sai5 = stash apply --index stash@{5}
 
-[url "https://"]
-	insteadOf = git://
 
