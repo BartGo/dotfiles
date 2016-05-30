@@ -1,6 +1,8 @@
 alias ll="ls -al"
 alias la="ls -al"
 alias dir="ls -al"
+alias edit="jstar"
+alias wedit="far /e"
 alias hh="history"
 alias hi='echo Hello!'
 
@@ -17,4 +19,5 @@ alias pf='ph pip freeze'
 hostname
 date
 echo ""
-cd /x
+cd ~
+pwd
