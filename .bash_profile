@@ -18,6 +18,16 @@ alias pf='ph pip freeze'
 
 hostname
 date
+read -p "Proxy user: "  -e user
+read -p "Password: " -s -e pass
+proxy_str="$user:$pass@SERVER_HERE:8080"
+echo
+export HTTP_PROXY="http://$proxy_str"
+export HTTPS_PROXY="https://$proxy_str"
+export http_proxy=$HTTP_PROXY
+export https_proxy=$HTTPS_PROXY
+#export | grep HTTP_PROXY
 echo ""
 cd ~
-pwd
+cd /x
+#pwd

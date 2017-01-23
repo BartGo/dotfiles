@@ -7,7 +7,7 @@
 
 ;[http]
 ;   proxy = http://USER:PASS@MY_PROXY:MY_PORT
-	sslVerify = false
+;	sslVerify = false
 
 ;[core]
 ;    editor = joe
