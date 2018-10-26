@@ -1,0 +1,11 @@
+apk get bash
+apk get htop
+apk get nano
+apk get curl
+apk get git
+apk get tig
+apk get mc
+apk get python
+apk get py2-pip
+apk get py2-gunicorn
+apk get links
