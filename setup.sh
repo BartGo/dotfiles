@@ -17,11 +17,12 @@
 #sudo rm /var/cache/apt/archives/lock
 
 cd ~
-git clone https://github.com/nanorc/nanorc.git
 
+#git clone https://github.com/nanorc/nanorc.git
 apt-get update
 apt-get install -y nano
 apt-get install -y jed
+apt-get install -y ne
 apt-get install -y vim
 apt-get install -y ruby-full
 apt-get install -y git-core
