@@ -1,0 +1,106 @@
+# raspberry-drafts
+# setting up a simple home server based on an old raspberry pi (B)
+
+# upc horizon: 192.168.1.1 admin/admin
+# port forwarding 22-22 and 80-80 for the reserved IP (192.168.1.9, before DHCP range) for ssh and www
+# need to set IP to a static one; https://www.raspberrypi.org/learning/networking-lessons/rpi-static-ip-address/
+
+- downloaded Raspbian Stretch Lite 4.14 from https://www.raspberrypi.org/downloads/raspbian/ and put to an SD card 
+- formatted and old USB flash drive (Sandisk, 4 GB) to FAT32
+- connected the raspberry (HDMI, RJ45, power) with the SD, the flash drive and a keyboard (optional wifi)
+- boot (power on by connecting mini usb)
+- login (pi/raspberry)
+
+sudo raspi-config
+# change user password -> change
+# network options -> hostname -> pi
+# network options -> wifi -> PL, SSID and pass
+# interfacing / ssh -> enable
+# advanced -> expand filesystem
+# advanced -> gpu memory: decrease to 32M
+# overclock -> modest
+# finish, no reboot
+sudo timedatectl set-timezone UTC
+ifconfig
+sudo nano /etc/dhcpcd.conf
+# edit:
+interface eth0 static ip_address=192.168.1.9/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.1.1 62.179.1.63 62.179.1.62 8.8.8.8
+# edit: /etc/wpa_supplicant/wpa_supplicant.conf and add id_str="..." to each network,
+id_str="..."
+# this allows to refer to it later in /etc/network/interfaces and potentially set up eth0-wlan0 fallback
+# see http://www.aoakley.com/articles/2013-07-31-raspberry-pi-networking.php
+# :save and exit nano
+
+reboot
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mc tmux ne git tig ufw tty-clock htop
+sudo apt-get install bsdgames
+sudo apt-get install apache2 goaccess python-pip python-virtualenv elinks
+
+# -- webcam
+sudo apt-get install motion
+sudo /etc/motion/motion.conf
+# deamon on, framerate 100, 640x480, stream_port 8081, stream_quality 100, stream_localhost off,
+# webcontrol_localhost off, post_capture 5
+sudo nano /etc/default/motion
+# start_motion_daemon=yes
+sudo rm /var/log/motion/motion.log
+sudo usermod -aG motion pi
+cd /var/log
+sudo chown root:motion motion
+sudo chmod 664 motion
+sudo service motion restart
+# https://www.instructables.com/id/How-to-Make-Raspberry-Pi-Webcam-Server-and-Stream-/
+# crontab -e
+# @hourly rm /var/lib/motion/*.*
+
+# -- pretty stuff
+cd ~
+git clone https://bitbucket.org/bgolda/raspberry-drafts/
+git clone https://github.com/bartgo/dotfiles
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+curl https://raw.githubusercontent.com/riobard/bash-powerline/master/bash-powerline.sh > ~/.bash-powerline.sh
+
+# -- web servers (apache, bottle/flask)
+cd ~
+git clone https://github.com/BartGo/bottle-cuturl
+# /etc/rc.local edited to run:
+cd /home/pi/bottle-cuturl
+# tbd: ./proinit.sh
+./env/bin/python manage.py runserver 
+# this should start on 80... set apache to run on 88?
+
+# -- dynamic ip
+# http://freedns.afraid.org/dynamic/
+crontab -e
+3,8,13,18,23,28,33,38,43,48,53,58 * * * * sleep 26 ; wget -O - http://freedns.afraid.org/dynamic/update.php?U0gxRTlnVGtxUTExMXBJU2F0cWl0OXZtOjE3OTEwNzQ1 >> /tmp/freedns_bg0p_chickenkiller_com.log 2>&1 &
+crontab -l
+
+# usb
+ls -al /dev/sd*
+sudo mount -t vfat /dev/sda1 /media
+sudo nano /etc/fstab
+#
+/dev/sda1   /media  vfat    defaults    0   2
+#
+
+sudo reboot
+less /tmp/freedns_bg0p_chickenkiller_com.log
+ls -al /media
+df -h
+
+# ssh pi@192.168.1.9
+# ? # sudo rm /etc/ssh/ssh_host_* 
+# ? # sudo dpkg-reconfigure openssh-server 
+
+--------------
+
+https://www.raspberrypi.org/documentation/linux/usage/users.md
+https://www.yougetsignal.com/tools/open-ports/
+https://www.instructables.com/id/FerretPi-Using-Raspberry-Pi-as-a-Secure-FTP-Server/
