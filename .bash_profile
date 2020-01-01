@@ -1,22 +1,12 @@
-# export PATH='~/.local/bin:$PATH'
-# env | grep PATH
-# 
-export WORKPROXY=proxyserver.example.com
-export WORKPPORT=8080
-#
-
-hostname
-date
-#read -r -p "Proxy user: " puser
-#read -r -p "Password: " ppass
-# *** please use %2F instead of \
-puser='myuser'
-ppass='mypass'
-proxy_str=$puser:$ppass@$WORKPROXY:$WORKPPORT
-export HTTP_PROXY="http://$proxy_str"
-export HTTPS_PROXY="https://$proxy_str"
-export http_proxy="$HTTP_PROXY"
-export https_proxy="$HTTPS_PROXY"
+#export WORKPROXY=proxyserver.example.com
+#export WORKPPORT=8080
+#puser='myuser'
+#ppass='mypass'
+#proxy_str=$puser:$ppass@$WORKPROXY:$WORKPPORT
+#export HTTP_PROXY="http://$proxy_str"
+#export HTTPS_PROXY="https://$proxy_str"
+#export http_proxy="$HTTP_PROXY"
+#export https_proxy="$HTTPS_PROXY"
 echo
 echo ""
 cd ~

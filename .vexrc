@@ -1,2 +1,0 @@
-shell=bash --login
-virtualenvs=~/.local/share/virtualenvs
