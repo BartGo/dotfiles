@@ -94,5 +94,7 @@
     sai3 = stash apply --index stash@{3}
     sai4 = stash apply --index stash@{4}
     sai5 = stash apply --index stash@{5}
+    rmloctags = tag -l | xargs git tag -d
+    
 
 
